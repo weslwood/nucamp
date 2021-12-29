@@ -64,6 +64,31 @@ const DirectoryNavigator = createStackNavigator(
   }
 );
 
+const HomeNavigator = createStackNavigator(
+  {
+    Home: { screen: Home },
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: "#5637DD",
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        color: "#fff",
+      },
+      headerLeft: (
+        <Icon
+          name="home"
+          type="font-awesome"
+          iconStyle={styles.stackIcon}
+          onPress={() => navigation.toggleDrawer}
+        />
+      ),
+    }),
+  }
+);
+
 const AboutNavigator = createStackNavigator(
   {
     About: { screen: About },
@@ -82,7 +107,7 @@ const AboutNavigator = createStackNavigator(
           name="info-circle"
           type="font-awesome"
           iconStyle={styles.stackIcon}
-          onPress={() => navigation.toggleDrawer}
+          onPress={() => navigation.toggleDrawer()}
         />
       ),
     }),
@@ -105,31 +130,6 @@ const ContactNavigator = createStackNavigator(
       headerLeft: (
         <Icon
           name="address-card"
-          type="font-awesome"
-          iconStyle={styles.stackIcon}
-          onPress={() => navigation.toggleDrawer}
-        />
-      ),
-    }),
-  }
-);
-
-const HomeNavigator = createStackNavigator(
-  {
-    Home: { screen: Home },
-  },
-  {
-    defaultNavigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: "#5637DD",
-      },
-      headerTintColor: "#fff",
-      headerTitleStyle: {
-        color: "#fff",
-      },
-      headerLeft: (
-        <Icon
-          name="home"
           type="font-awesome"
           iconStyle={styles.stackIcon}
           onPress={() => navigation.toggleDrawer}

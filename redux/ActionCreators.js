@@ -48,7 +48,7 @@ export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
   }, 2000);
 };
 
-export const addComment = comment => ({
+export const addComment = (comment) => ({
   type: ActionTypes.ADD_COMMENT,
   payload: comment,
 });
@@ -181,5 +181,10 @@ export const postFavorite = (campsiteId) => (dispatch) => {
 
 export const addFavorite = (campsiteId) => ({
   type: ActionTypes.ADD_FAVORITE,
+  payload: campsiteId,
+});
+
+export const deleteFavorite = (campsiteId) => ({
+  type: ActionTypes.DELETE_FAVORITE,
   payload: campsiteId,
 });
